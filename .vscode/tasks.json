@@ -1,0 +1,42 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Compile and run",
+        "type": "shell",
+        "command": "cmd",
+        "args": [
+          "/c",
+          "g++",
+          "${file}",
+          "-o",
+          "${fileDirname}\\c1.exe",
+          "&&",
+          "${fileDirname}\\c1.exe",
+          "<",
+          "input.txt",
+          ">",
+          "output.txt"
+        ],
+        "presentation": {
+          "reveal": "never"
+        },
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": {
+          "owner": "cpp",
+          "fileLocation": "absolute",
+          "pattern": {
+            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "severity": 4,
+            "message": 5
+          }
+        }
+      }
+    ]
+}
